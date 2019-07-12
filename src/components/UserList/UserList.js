@@ -3,21 +3,17 @@ import style from "./UserList.module.sass"
 import SelectedItem from "../../components/UserList/SelectedItem/SelectedItem"
 import List from "../../components/UserList/List/List"
 
-import * as constants from "../../constants/constants"
+import constants from "../../constants/constants"
 
 class UserList extends Component{
 
     constructor(props){
         super(props);
         this.state={
-            users:[],
+            users: constants,
             isToggleOn: false
         }
     }
-
-    listItemName = () => {
-        return constants.USERS.map((u) => u.fullName)
-    };
 
     onClicked = () => {
         this.setState({
@@ -31,7 +27,8 @@ class UserList extends Component{
                 <SelectedItem/>
                 <List
                     onClicked={this.onClicked}
-                    listItemName={this.listItemName()}/>
+                    listItemUsers={this.state.users}
+                />
             </div>
         )
     }

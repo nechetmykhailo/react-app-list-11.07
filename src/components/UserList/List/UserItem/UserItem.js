@@ -5,9 +5,11 @@ import UserSelect from "./UserSelect/UserSelect"
 
 const UserItem = (props) => {
     return (
-        <div onClick={ () => props.onClicked() } className={style.userItem}>
-            <UserAvatar/>
-            {props.listItemName}
+        <div
+            // onClick={ () => props.onClicked()}
+            className={style.userItem}>
+            <UserAvatar userAvatar={props.user.image}/>
+            {props.user.fullName}
             <UserSelect/>
         </div>
     )
